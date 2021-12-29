@@ -1,7 +1,6 @@
 $(document).ready(function() {
 
   TOPIC = 'sensor/values';
-
   var client;
 
   var username = new Date().getTime().toString();
@@ -10,9 +9,9 @@ $(document).ready(function() {
     e.preventDefault();
     e.stopPropagation();
 
-    var id = $('[name=id]').val();
-    var endpoint = $('[name=iot]').val();
-    var secret = $('[name=secret]').val();
+    var id = "//Access key ID";
+    var secret = "//Secret access key";
+    var endpoint = "//Endpoint";
 
     connect({ endpoint: endpoint.toLowerCase(), id: id, secret: secret });
   });
@@ -31,8 +30,7 @@ $(document).ready(function() {
 
   var onSuccess = function() {
     client.subscribe(TOPIC);
-    onChat(username + ' has joined the chat.');
-    onMessage({ payloadString: 'You have joined the chat.' });
+    onMessage({ payloadString: 'Connected successfully.' });
   };
 
   var onChat = function(msg) {
