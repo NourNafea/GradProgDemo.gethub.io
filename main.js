@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  TOPIC = 'sensor/values';
+  TOPIC = 'Put your topic here';
   var client;
 
   var username = new Date().getTime().toString();
